@@ -1,10 +1,13 @@
 {
   "name": "fulgor",
+  "type": "module",
   "version": "1.0.0",
   "description": "A minimal Svelte project with manual configuration, including Tailwind CSS for styling.",
   "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "lint": "eslint .",
+    "format": "prettier --write .",
+    "lint:fix": "eslint --fix ."
   },
   "repository": {
     "type": "git",
@@ -22,6 +25,10 @@
   },
   "devDependencies": {
     "@rollup/plugin-node-resolve": "^16.0.1",
+    "eslint": "^9.26.0",
+    "eslint-config-prettier": "^10.1.5",
+    "eslint-plugin-prettier": "^5.4.0",
+    "prettier": "^3.5.3",
     "rollup": "^2.79.2",
     "rollup-plugin-css-only": "^4.5.2",
     "rollup-plugin-svelte": "^7.2.2",
