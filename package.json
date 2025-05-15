@@ -16,5 +16,15 @@
   "bugs": {
     "url": "https://github.com/astronomico/fulgor/issues"
   },
-  "homepage": "https://github.com/astronomico/fulgor#readme"
+  "homepage": "https://github.com/astronomico/fulgor#readme",
+  "dependencies": {
+    "svelte": "^5.30.1"
+  },
+  "devDependencies": {
+    "@rollup/plugin-node-resolve": "^16.0.1",
+    "rollup": "^2.79.2",
+    "rollup-plugin-css-only": "^4.5.2",
+    "rollup-plugin-svelte": "^7.2.2",
+    "rollup-plugin-terser": "^7.0.2"
+  }
 }
