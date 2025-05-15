@@ -1,0 +1,20 @@
+{
+  "name": "fulgor",
+  "version": "1.0.0",
+  "description": "A minimal Svelte project with manual configuration, including Tailwind CSS for styling.",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/astronomico/fulgor.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/astronomico/fulgor/issues"
+  },
+  "homepage": "https://github.com/astronomico/fulgor#readme"
+}
