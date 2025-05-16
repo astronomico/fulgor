@@ -1,8 +1,10 @@
 import svelte from 'rollup-plugin-svelte'
-import { nodeResolve } from '@rollup/plugin-node-resolve'
+import resolve from '@rollup/plugin-node-resolve'
 import serve from 'rollup-plugin-serve'
 import terser from '@rollup/plugin-terser'
 import postcss from 'postcss'
+
+const production = !process.env.ROLLUP_WATCH
 
 export default {
   input: 'src/main.js',
@@ -10,25 +12,29 @@ export default {
     file: 'public/build/bundle.js',
     format: 'iife',
     name: 'app',
-    sourcemap: 'true'
+    sourcemap: !production
   },
   plugins: [
     svelte({
       compilerOptions: {
-        dev: true,
+        dev: !production,
         runes: true // ← Necesario para Svelte 5+
       }
     }),
-    nodeResolve({
+    // nodeResolve({
+    //   browser: true,
+    //   exportConditions: ['svelte']
+    // }),
+    // css({ output: 'bundle.css' }),
+    resolve({
       browser: true,
+      dedupe: ['svelte'],
       exportConditions: ['svelte']
     }),
-    // css({ output: 'bundle.css' }),
-    nodeResolve({ browser: true, dedupe: ['svelte'] }),
     terser(),
     postcss({
       extract: true,
-      minimize: true,
+      minimize: production,
       plugins: [require('tailwindcss'), require('autoprefixer')]
     }),
     serve({
